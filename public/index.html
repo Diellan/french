@@ -11,7 +11,6 @@
     <script defer src="/__/firebase/8.4.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.4.1/firebase-database.js"></script>
     <script defer src="/__/firebase/8.4.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.4.1/firebase-functions.js"></script>
     <script defer src="/__/firebase/8.4.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/8.4.1/firebase-storage.js"></script>
     <script defer src="/__/firebase/8.4.1/firebase-analytics.js"></script>
@@ -24,28 +23,119 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
     <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 16pt;
+      }
+
+      .step {
+        display: none;
+        background-size: contain;
+        background: #c0c0c0 no-repeat center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5%;
+      }
+
+      #word {
+        font-size: 7vh;
+      }
+
+      #step-form > div {
+        width: 80%;
+      }
+
+      textarea {
+        width: 100%;
+        height: 80px;
       }
     </style>
+    <script src="script.js" type="application/javascript"></script>
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <div class="step" id="step-one">
+      <p>Welcome!</p>
+      <p>This experiment is intended for individuals of age 18 to 35, who were exposed only to English at the age of six, and who do <i>not</i> have any familiarity with Hebrew, Arabic, or other Semitic languages (or derivatives like Yiddish or Ladino).</p>
+      <p>Individuals with learning or cognitive disabilities (such as dyslexia or strong ADHD), or visual impairments that are not correctable (corrected with glasses is fine), should also be excluded (sorry!).</p>
+      <p>This experiment should be performed in a lab-like setting (aka somewhere quiet and free of distractions, especially audible words).</p>
+      <p>It will take roughly 10 minutes to perform.</p>
+      <p>Questions can be directed to the <a href="https://www.reddit.com/r/SampleSize/comments/781ssi/academic_lexical_decision_experiment_in_english/" target="_blank">reddit thread</a> or to <a href="mailto:citizengenia@gmail.com" target="_blank">citizengenia@gmail.com</a>.</p>
+      <p>Press the space bar to continue.</p>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <div class="step" id="step-form">
+      <div>
+        <label for="sex">What is your biological sex?</label>
+        <select name="sex" id="sex">
+          <option></option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="age">How old are you?</label>
+        <input type="text" name="age" id="age" />
+      </div>
+      <div>
+        <label for="handedness">What is your dominant hand?</label>
+        <select name="handedness" id="handedness">
+          <option></option>
+          <option>Right</option>
+          <option>Left</option>
+          <option>Ambidexterous</option>
+        </select>
+      </div>
+      <div>
+        <label for="languages">What languages do you know besides English? Please list them and the age you acquired them (to the best of your ability).</label>
+        <textarea id="languages"></textarea>
+      </div>
+      <button id="submitForm">Submit Results</button>
+    </div>
+    <div class="step" id="step-two">
+      <p>In this experiment, a letter string will appear at the center of the screen.</p>
+      <p>Your task is to decide as quickly and as accurately as possible if it is a real English word.</p>
+      <p>Press the number 2 if the letter string IS a real word in English.</p>
+      <p>Press the number 1 if the letter string IS NOT a real word in English.</p>
+      <p>If you are not sure, it is okay to guess.</p>
+      <p>Press the space bar to continue.</p>
+    </div>
+    <div class="step" id="step-three">
+      <p>In each trial, a fixation cross (+) will appear at the center of the screen, and will quickly be replaced by the letter string.</p>
+      <p>Once you respond whether the letter string is a real English word, it will disappear from the screen and be replaced by the cross again.</p>
+      <p>You will have several breaks during the experiment to rest your eyes and regain your concentration.</p>
+      <p>You will have some practice trials to become comfortable with this task.<br>You will be notified when the practice trials are over.</p>
+      <p>If you have any questions, please ask the experimenter now.<br>Press the space bar to begin the practice trials.</p>
+    </div>
+    <div class="step" id="word-container">
+      <p id="word"></p>
+    </div>
+    <div class="step" id="step-four">
+      <p>You have completed the practice trials.</p>
+      <p>Do you have any questions?</p>
+      <p>Please press the space bar to begin the experiment.</p>
+    </div>
+    <div class="step" id="step-finish">
+      <p>You have completed the experiment.</p>
+      <p>Please call the experimenter to continue.</p>
+      <p>Thank you.</p>
+    </div>
+    <div class="step" id="step-pause">
+      <p>This is a break.</p>
+      <p>Please take a few moments to rest your eyes and regain your concentration.</p>
+      <p>When you are ready to continue, press the spacebar.</p>
+      <p>Please remember to respond as quickly and accurately as possible.</p>
+    </div>
+    <div class="step" id="step-loading">
+      <p>Submitting...</p>
+    </div>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -56,7 +146,6 @@
         // firebase.auth().onAuthStateChanged(user => { });
         // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
         // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
         // firebase.messaging().requestPermission().then(() => { });
         // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
         // firebase.analytics(); // call to activate
@@ -71,7 +160,6 @@
             'auth', 
             'database', 
             'firestore',
-            'functions',
             'messaging', 
             'storage', 
             'analytics', 
