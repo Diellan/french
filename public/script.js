@@ -3,10 +3,11 @@
 function keyup(e){
 	switch (e.key) {
 		case '1':
-			trackWord(false);
-			break;
 		case '2':
-			trackWord(true);
+		case '3':
+		case '4':
+			``;
+			trackWord(parseInt(e.key));
 			break;
 		case ' ':
 			progressSlide();
@@ -20,33 +21,38 @@ function keyup(e){
 	}
 }
 
+function answerClick(e) {
+	console.log('answerClick', e);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 	document.body.addEventListener('keyup', keyup);
 	document.getElementById('submitForm').addEventListener('click', submitForm);
 	document.getElementById('step-one').style.display = 'flex';
+	document.getElementById('answers').addEventListener('click', answerClick);
 });
 
-let currentWord;
-let currentWordIndex = -1;
+let item;
+let itemIndex = -1;
 let isPractice = true;
 let state = 'start';
 let results = [];
-let words = [];
+let bank = [];
 let user = {};
 
 function runPractice(){
 	user.practiceStart = Date.now();
-	words = [].concat(window.wordBank.practiceEnglish).concat(window.wordBank.practiceNonEnglish);
-	shuffleArray(words);
-	currentWordIndex = 0;
+	bank = window.bank.practice;
+	shuffleArray(bank);
+	itemIndex = 0;
 	runNextWord();
 }
 
 function runExperiment(){
 	user.experimentStart = Date.now();
-	words = [].concat(window.wordBank.english).concat(window.wordBank.hebrew).concat(window.wordBank.trueNonWords);
-	shuffleArray(words);
-	currentWordIndex = 0;
+	words = window.bank.main;
+	shuffleArray(bank);
+	itemIndex = 0;
 	runNextWord();
 }
 
@@ -63,48 +69,42 @@ function shuffleArray(array) {
 }
 
 function runNextWord() {
-	let word = words[currentWordIndex];
+	item = bank[itemIndex];
 	let wordElement = document.getElementById('word');
-	wordElement.innerHTML = '+';
+	wordElement.innerHTML = '';
 
 	setTimeout(function(){
 		let result = {
-			stimWord: word.stimWord,
+			...item,
 			onsetTime: Date.now(),
-			WordType: word.type,
-			WordStatus: 'NULL',
-			trialsDataList: 'NULL',
-			TrueNonWordsList: 'NULL',
-			ItemNum: word.ItemNum,
-			isPrac: isPractice,
-			valid: word.type === 'EnTrueWord' || word.type === 'HebWord'
+			isPrac: isPractice
 		};
 
 		results.push(result);
 
-		if (!isPractice) {
-			result.WordStatus = result.valid ? 'word' : 'nonword';
-		}
-
-		currentWord = word.stimWord;
-		wordElement.innerHTML = currentWord;
+		let audioElement = document.getElementById('audio');
+		audioElement.src = item.soundFile;
+		audioElement.play().catch(console.error);
+		audioElement.onended = () => {
+			wordElement.innerHTML = item.answers.map(answer => `<li data-key="${answer.key}">${answer.symbol}</li>`).join('');
+		};
 	}, 500);
 }
 
-function trackWord(valid){
-	if (!currentWord) return;
+function trackWord(response) {
+	if (!item) return;
 	let result = results[results.length - 1];
 	result.reactionTime = Date.now();
 	result.reaction = result.reactionTime - result.onsetTime;
-	result.response = valid ? 2 : 1;
-	result.accuracy = result.valid === valid;
+	result.response = response;
+	result.accuracy = result.response === result.answer;
 
-	currentWordIndex++;
-	currentWord = null;
+	itemIndex++;
+	item = null;
 
-	if (!words[currentWordIndex]) {
+	if (!bank[itemIndex]) {
 		displayFinish();
-	} else if (currentWordIndex > 25 && currentWordIndex < words.length - 25 && currentWordIndex % 25 === 1) {
+	} else if (itemIndex > 25 && itemIndex < bank.length - 25 && itemIndex % 25 === 1) {
 		displayPause();
 	} else {
 		if (isPractice && result.accuracy)
@@ -119,13 +119,13 @@ function trackWord(valid){
 	}
 }
 
-function displayPause(){
+function displayPause() {
 	document.getElementById('word-container').style.display = 'none';
 	document.getElementById('step-pause').style.display = 'flex';
 	state = 'pause';
 }
 
-function displayFinish(){
+function displayFinish() {
 	document.getElementById('word-container').style.display = 'none';
 	if (isPractice) {
 		document.getElementById('step-four').style.display = 'flex';
@@ -137,8 +137,8 @@ function displayFinish(){
 	}
 }
 
-function progressSlide(){
-	switch(state){
+function progressSlide() {
+	switch(state) {
 		case 'start':
 			document.getElementById('step-one').style.display = 'none';
 			document.getElementById('step-two').style.display = 'flex';
@@ -174,7 +174,7 @@ function progressSlide(){
 }
 
 let submitAttempts = 0;
-function submitResults(){
+function submitResults() {
 	document.getElementById('step-loading').style.display = 'flex';
 	firebase.database().ref('results').push().set({
 		results: results,
@@ -190,7 +190,7 @@ function submitResults(){
 	});
 }
 
-function submitForm(){
+function submitForm() {
 	if (submitAttempts > 0) return; // just in case lag or something makes it come here again
 
 	let handedness = document.getElementById("handedness");
