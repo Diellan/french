@@ -6,7 +6,6 @@ function keyup(e){
 		case '2':
 		case '3':
 		case '4':
-			``;
 			trackWord(parseInt(e.key));
 			break;
 		case ' ':
