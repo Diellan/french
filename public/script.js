@@ -20,6 +20,10 @@ function keyup(e){
 	}
 }
 
+function next(){
+	progressSlide();
+}
+
 function answerClick(e) {
 	console.log('answerClick', e);
 }
@@ -69,7 +73,7 @@ function shuffleArray(array) {
 
 function runNextWord() {
 	item = bank[itemIndex];
-	let wordElement = document.getElementById('word');
+	let wordElement = document.getElementById('answers');
 	wordElement.innerHTML = '';
 
 	setTimeout(function(){
