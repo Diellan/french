@@ -63,13 +63,14 @@
   </head>
   <body>
     <div class="step" id="step-one">
-      <p>Welcome!</p>
-      <p>This experiment is intended for individuals of age 18 to 35, who were exposed only to English at the age of six, and who do <i>not</i> have any familiarity with Hebrew, Arabic, or other Semitic languages (or derivatives like Yiddish or Ladino).</p>
-      <p>Individuals with learning or cognitive disabilities (such as dyslexia or strong ADHD), or visual impairments that are not correctable (corrected with glasses is fine), should also be excluded (sorry!).</p>
-      <p>This experiment should be performed in a lab-like setting (aka somewhere quiet and free of distractions, especially audible words).</p>
-      <p>It will take roughly 10 minutes to perform.</p>
-      <p>Questions can be directed to the <a href="https://www.reddit.com/r/SampleSize/comments/781ssi/academic_lexical_decision_experiment_in_english/" target="_blank">reddit thread</a> or to <a href="mailto:citizengenia@gmail.com" target="_blank">citizengenia@gmail.com</a>.</p>
+      <p>Hello and welcome!</p>
+      <p>Thank you for participating! In this experiment for people who studied French in high school, you will be asked to match letter-strings to sounds.</p>
+      <p>First, you will hear a sound play in your headphones, then a multiple-choice answer set will appear. Please click on the letter string that best matches the sound you've just heard as quickly and as accurately as possible. Once you've clicked on the letter-string, you will proceed automatically to the next question.</p>
+      <p>You will have the opportunity to practice questions and answers before the experiment phase.</p>
+      <p>First, let's fill out a short background questionnaire!</p>
+      <p>All information in the questionnaire is confidential and will be used anonymously.</p>
       <p>Press the space bar to continue.</p>
+      <button onclick="next">Next</button>
     </div>
     <div class="step" id="step-form">
       <div>
@@ -86,48 +87,156 @@
         <input type="text" name="age" id="age" />
       </div>
       <div>
-        <label for="handedness">What is your dominant hand?</label>
-        <select name="handedness" id="handedness">
+        <label for="education">What is your level of education?</label>
+        <select name="education" id="education">
           <option></option>
-          <option>Right</option>
-          <option>Left</option>
-          <option>Ambidexterous</option>
+          <option>High school</option>
+          <option>Some College</option>
+          <option>Undergraduate Degree</option>
+          <option>Graduate Degree</option>
         </select>
       </div>
       <div>
         <label for="languages">What languages do you know besides English? Please list them and the age you acquired them (to the best of your ability).</label>
-        <textarea id="languages"></textarea>
+        <textarea id="languages" name="languages"></textarea>
+      </div>
+      <div>
+        <label for="french-age">What age did you begin studying French?</label>
+        <select name="french-age" id="french-age">
+          <option></option>
+          <option>Before elementary school</option>
+          <option>Elementary school</option>
+          <option>Middle School</option>
+          <option>High school</option>
+          <opion>Other (explain)</opion>
+        </select>
+        <input type="text" name="french-age-more" id="french-age-more" />
+      </div>
+      <div>
+        <label for="french-years">How many years of French did you take?</label>
+        <input type="text" name="french-years" id="french-years"></textarea>
+      </div>
+      <div>
+        <label for="french-exposure">Have you continued using/being exposed to French after high school?</label>
+        <select name="french-exposure" id="french-exposure">
+          <option></option>
+          <option>Yes (explain)</option>
+          <option>No</option>
+        </select>
+        <input type="text" name="french-exposure-more" id="french-exposure-more" />
+      </div>
+      <div>
+        <label for="french-usage-outside">During your high school studies, did you learn or use French voluntarily outside school?</label>
+        <select name="french-usage-outside" id="french-usage-outside">
+          <option></option>
+          <option>Yes (explain)</option>
+          <option>No</option>
+        </select>
+        <input type="text" name="french-usage-outside-more" id="french-usage-outside-more" />
+      </div>
+      <div>
+        <label for="french-country">Did you spend any time in a French-speaking country?</label>
+        <select name="french-country" id="french-country">
+          <option></option>
+          <option>No</option>
+          <option>Less than 2 weeks</option>
+          <option>Less than 1 month</option>
+          <option>1-6 months</option>
+          <option>6 months - 1 year</option>
+          <option>More than year</option>
+        </select>
+      </div>
+      <div>
+        <label for="french-listening">Please indicate your French listening abilities in high school:</label>
+        <select name="french-listening" id="french-listening">
+          <option value="1">1 (Very low level)</option>
+          <option value="2">2 (low level)</option>
+          <option value="3">3 (moderate level)</option>
+          <option value="4">4 (high level)</option>
+          <option value="5">5 (Very high level)</option>
+        </select>
+      </div>
+      <div>
+        <label for="french-reading">Please indicate your French reading abilities in high school:</label>
+        <select name="french-reading" id="french-reading">
+          <option value="1">1 (Very low level)</option>
+          <option value="2">2 (low level)</option>
+          <option value="3">3 (moderate level)</option>
+          <option value="4">4 (high level)</option>
+          <option value="5">5 (Very high level)</option>
+        </select>
+      </div>
+      <div>
+        <label for="french-writing">Please indicate your French writing abilities in high school:</label>
+        <select name="french-writing" id="french-writing">
+          <option value="1">1 (Very low level)</option>
+          <option value="2">2 (low level)</option>
+          <option value="3">3 (moderate level)</option>
+          <option value="4">4 (high level)</option>
+          <option value="5">5 (Very high level)</option>
+        </select>
+      </div>
+      <div>
+        <label for="french-speaking">Please indicate your French speaking abilities in high school:</label>
+        <select name="french-speaking" id="french-speaking">
+          <option value="1">1 (Very low level)</option>
+          <option value="2">2 (low level)</option>
+          <option value="3">3 (moderate level)</option>
+          <option value="4">4 (high level)</option>
+          <option value="5">5 (Very high level)</option>
+        </select>
+      </div>
+      <div>
+        <label for="french-why">Why did you choose to study French?</label>
+        <textarea id="french-why" name="french-why"></textarea>
+      </div>
+      <div>
+        <label for="french-enjoyment">Did you enjoy learning French in high school?</label>
+        <select name="french-enjoyment" id="french-enjoyment">
+          <option></option>
+          <option>No</option>
+          <option>Somewhat</option>
+          <option>Moderately</option>
+          <option>Greatly</option>
+        </select>
+      </div>
+      <div>
+        <label for="french-connected">Do you feel connected to French culture?</label>
+        <select name="french-connected" id="french-connected">
+          <option></option>
+          <option>No</option>
+          <option>Somewhat</option>
+          <option>Moderately</option>
+          <option>Greatly</option>
+        </select>
       </div>
       <button id="submitForm">Submit Results</button>
     </div>
     <div class="step" id="step-two">
-      <p>In this experiment, a letter string will appear at the center of the screen.</p>
-      <p>Your task is to decide as quickly and as accurately as possible if it is a real English word.</p>
-      <p>Press the number 2 if the letter string IS a real word in English.</p>
-      <p>Press the number 1 if the letter string IS NOT a real word in English.</p>
-      <p>If you are not sure, it is okay to guess.</p>
-      <p>Press the space bar to continue.</p>
+      <p>First, let's do a quick sound test!</p>
+      <p>You will hear a sentence and a question for which you will need to click on the correct answer. If you do not hear the question, please check your headphones and click Repeat.</p>
+      <button onclick="repeat">Repeat</button>
+      <button>No</button>
+      <button onclick="next">Yes</button>
     </div>
     <div class="step" id="step-three">
-      <p>In each trial, a fixation cross (+) will appear at the center of the screen, and will quickly be replaced by the letter string.</p>
-      <p>Once you respond whether the letter string is a real English word, it will disappear from the screen and be replaced by the cross again.</p>
-      <p>You will have several breaks during the experiment to rest your eyes and regain your concentration.</p>
-      <p>You will have some practice trials to become comfortable with this task.<br>You will be notified when the practice trials are over.</p>
-      <p>If you have any questions, please ask the experimenter now.<br>Press the space bar to begin the practice trials.</p>
+      <p>Thank you!</p>
+      <p>You will now see several practice questions, just to make sure you know how it all works!</p>
+      <p>Please press Next to continue to the practice session.</p>
+      <button onclick="next">Next</button>
     </div>
     <div class="step" id="word-container">
       <audio id="audio"></audio>
       <ol id="answers"></ol>
     </div>
     <div class="step" id="step-four">
-      <p>You have completed the practice trials.</p>
-      <p>Do you have any questions?</p>
-      <p>Please press the space bar to begin the experiment.</p>
+      <p>This is the end of your practise session. From here on out you will receive no more feedback on your answers.</p>
+      <p>Please press Next to begin the experiment.</p>
+      <button onclick="next">Next</button>
     </div>
     <div class="step" id="step-finish">
-      <p>You have completed the experiment.</p>
-      <p>Please call the experimenter to continue.</p>
-      <p>Thank you.</p>
+      <p>You're all done!</p>
+      <p>Thank you for participating!</p>
     </div>
     <div class="step" id="step-pause">
       <p>This is a break.</p>
