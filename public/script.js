@@ -94,18 +94,22 @@ function runNextWord() {
 
 		let audioElement = document.getElementById('audio');
 		audioElement.src = item.soundFile;
-		audioElement.play().catch(console.error);
+		audioElement.onplaying = () => {
+			result.audioStart = Date.now();
+		};
 		audioElement.onended = () => {
+			result.audioEnd = Date.now();
 			wordElement.innerHTML = item.answers.map(answer => `<li data-key="${answer.key}">${answer.symbol}</li>`).join('');
 		};
+		audioElement.play().catch(console.error);
 	}, 500);
 }
 
 function trackWord(response) {
 	if (!item) return;
 	let result = results[results.length - 1];
-	result.reactionTime = Date.now();
-	result.reaction = result.reactionTime - result.onsetTime;
+	result.responseTime = Date.now();
+	result.reaction = result.responseTime - result.audioEnd;
 	result.response = response;
 	result.accuracy = result.response === result.answer;
 
@@ -215,11 +219,13 @@ function submitForm() {
 		return;
 	}
 
-	user.sex = document.getElementById('sex').value;
-	user.age = document.getElementById('age').value;
-	user.handedness = handedness.options[handedness.selectedIndex].text;
-	user.languages = document.getElementById('languages').value;
-	user.endTime = Date.now();
+	let questionnaire = document.getElementById('questionnaire');
+	const formData = new FormData(questionnaire);
+	for (const pair of formData.entries()) {
+		user[pair[0]] = pair[1];
+	}
+
+	user.formSubmitTime = Date.now();
 
 	document.getElementById('submitForm').removeEventListener('click', submitForm);
 	document.getElementById('step-form').style.display = 'none';
