@@ -1,4 +1,5 @@
 'use strict';
+let wordElement;
 
 function keyup(e){
 	switch (e.key) {
@@ -25,14 +26,17 @@ function next(){
 }
 
 function answerClick(e) {
-	console.log('answerClick', e);
+	const key = parseInt(e.target.getAttribute('data-key'));
+	console.log('answerClick', e, key);
+	trackWord(key);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
 	document.body.addEventListener('keyup', keyup);
 	document.getElementById('submitForm').addEventListener('click', submitForm);
 	document.getElementById('step-one').style.display = 'flex';
-	document.getElementById('answers').addEventListener('click', answerClick);
+	wordElement = document.getElementById('answers');
+	wordElement.addEventListener('click', answerClick);
 });
 
 let item;
@@ -73,7 +77,6 @@ function shuffleArray(array) {
 
 function runNextWord() {
 	item = bank[itemIndex];
-	let wordElement = document.getElementById('answers');
 	wordElement.innerHTML = '';
 
 	setTimeout(function(){
@@ -111,11 +114,11 @@ function trackWord(response) {
 		displayPause();
 	} else {
 		if (isPractice && result.accuracy)
-			document.getElementById('word').innerHTML = '<img src="correct.png" />';
+			wordElement.innerHTML = '<img src="correct.png" />';
 		else if (isPractice && !result.accuracy)
-			document.getElementById('word').innerHTML = '<img src="incorrect.png" />';
+			wordElement.innerHTML = '<img src="incorrect.png" />';
 		else
-			document.getElementById('word').innerHTML = '';
+			wordElement.innerHTML = '';
 		setTimeout(function(){
 			runNextWord();
 		}, 1500);

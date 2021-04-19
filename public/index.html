@@ -57,6 +57,10 @@
         width: 100%;
         height: 80px;
       }
+
+      #answers li {
+        margin: 30px;
+      }
     </style>
     <script src="script.js" type="application/javascript"></script>
     <script src="bank.js" type="application/javascript"></script>
@@ -69,7 +73,6 @@
       <p>You will have the opportunity to practice questions and answers before the experiment phase.</p>
       <p>First, let's fill out a short background questionnaire!</p>
       <p>All information in the questionnaire is confidential and will be used anonymously.</p>
-      <p>Press the space bar to continue.</p>
       <button onclick="next()">Next</button>
     </div>
     <div class="step" id="step-form">
@@ -222,8 +225,7 @@
     <div class="step" id="step-three">
       <p>Thank you!</p>
       <p>You will now see several practice questions, just to make sure you know how it all works!</p>
-      <p>Please press Next to continue to the practice session.</p>
-      <button onclick="next()">Next</button>
+      <button onclick="next()">Start practice</button>
     </div>
     <div class="step" id="word-container">
       <audio id="audio"></audio>
@@ -231,8 +233,7 @@
     </div>
     <div class="step" id="step-four">
       <p>This is the end of your practise session. From here on out you will receive no more feedback on your answers.</p>
-      <p>Please press Next to begin the experiment.</p>
-      <button onclick="next()">Next</button>
+      <button onclick="next()">Begin the experiment</button>
     </div>
     <div class="step" id="step-finish">
       <p>You're all done!</p>
