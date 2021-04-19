@@ -57,7 +57,7 @@ function runPractice(){
 
 function runExperiment(){
 	user.experimentStart = Date.now();
-	words = window.bank.main;
+	bank = window.bank.main;
 	shuffleArray(bank);
 	itemIndex = 0;
 	runNextWord();
