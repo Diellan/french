@@ -28,6 +28,10 @@ function next(){
 function answerClick(e) {
 	const key = parseInt(e.target.getAttribute('data-key'));
 	console.log('answerClick', e, key);
+	if (isNaN(key)) {
+		// could be click on margin or whatever
+		return;
+	}
 	trackWord(key);
 }
 
