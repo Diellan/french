@@ -143,7 +143,7 @@ function displayFinish() {
 		state = 'four';
 	} else {
 		document.getElementById('step-form').style.display = 'flex';
-		state = 'form';
+		state = 'finish';
 	}
 }
 
@@ -156,6 +156,11 @@ function progressSlide() {
 			break;
 		case 'two':
 			document.getElementById('step-two').style.display = 'none';
+			document.getElementById('step-form').style.display = 'flex';
+			state = 'form';
+			break;
+		case 'form':
+			document.getElementById('step-form').style.display = 'none';
 			document.getElementById('step-three').style.display = 'flex';
 			state = 'three';
 			break;
@@ -218,5 +223,5 @@ function submitForm() {
 
 	document.getElementById('submitForm').removeEventListener('click', submitForm);
 	document.getElementById('step-form').style.display = 'none';
-	submitResults();
+	progressSlide();
 }
