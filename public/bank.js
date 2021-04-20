@@ -1,636 +1,74 @@
 window.bank = {
 	practice: [
-		{
-			_id: 1001,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: 'audio/a.m4a'
-		},
-		{
-			_id: 1002,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: 'audio/a.m4a'
-		},
-		{
-			_id: 1003,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: 'audio/a.m4a'
-		},
-		{
-			_id: 1004,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: 'audio/a.m4a'
-		},
-		{
-			_id: 1005,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: 'audio/a.m4a'
-		}
+		{ _id: 1001, soundFile: 'audio/i.m4a', answers: [{ symbol: 'rise', key: 1 }, { symbol: 'neuble', key: 2 }, { symbol: 'vaime', key: 3 }, { symbol: 'noeur', key: 4 }], answer: 1 },
+		{ _id: 1002, soundFile: 'audio/i.m4a', answers: [{ symbol: 'seucre', key: 1 }, { symbol: 'mive', key: 2 }, { symbol: 'taive', key: 3 }, { symbol: 'gatre', key: 4 }], answer: 2 },
+		{ _id: 1003, soundFile: 'audio/u.m4a', answers: [{ symbol: 'seuple', key: 1 }, { symbol: 'cive', key: 2 }, { symbol: 'broux', key: 3 }, { symbol: 'sep', key: 4 }], answer: 3 },
+		{ _id: 1004, soundFile: 'audio/u.m4a', answers: [{ symbol: 'prêre', key: 1 }, { symbol: 'rong', key: 2 }, { symbol: 'pise', key: 3 }, { symbol: 'chouf', key: 4 }], answer: 4 },
+		{ _id: 1005, soundFile: 'audio/o.m4a', answers: [{ symbol: 'soeud', key: 1 }, { symbol: 'nompe', key: 2 }, { symbol: 'gaime', key: 3 }, { symbol: 'cine', key: 4 }], answer: 2 },
+		{ _id: 1006, soundFile: 'audio/o.m4a', answers: [{ symbol: 'teurre', key: 1 }, { symbol: 'fot', key: 2 }, { symbol: 'pite', key: 3 }, { symbol: 'cel', key: 4 }], answer: 2 },
 	],
 	main: [
-		{
-			_id: 1,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 2,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 3,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 4,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 5,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 6,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 7,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 8,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 9,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 10,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 11,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 12,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 13,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 14,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 15,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 16,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 17,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 18,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 19,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 20,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 21,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 22,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 23,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 24,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 25,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 26,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 27,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 28,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 29,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 30,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 31,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 32,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 33,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 34,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 35,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 36,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 37,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 38,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 39,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 40,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 41,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 42,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 43,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 44,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 45,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 46,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 47,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 48,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 49,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 50,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 51,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 52,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 53,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 54,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 55,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 56,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 57,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 58,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 59,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 60,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 61,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 62,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 63,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 64,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 65,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 66,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 67,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 68,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 69,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 70,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 71,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 72,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 73,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 74,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 75,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 76,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 77,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 78,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 79,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 80,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 81,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 82,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 83,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 84,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 85,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 86,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 87,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 88,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 89,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 90,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 91,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 92,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 93,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 94,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 95,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 96,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 97,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 98,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 99,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		},
-		{
-			_id: 100,
-			answers: [ { symbol: 'a', key: 1 }, { symbol: 'b', key: 2 }, { symbol: 'c', key: 3 }, { symbol: 'd', key: 4 } ],
-			answer: 1,
-			soundFile: "audio/a.m4a"
-		}
+		{ _id: 1, soundFile: 'audio/y.m4a', answers: [{ symbol: 'laugne', key: 1 }, { symbol: 'brûme', key: 2 }, { symbol: 'pâcre', key: 3 }, { symbol: 'ron', key: 4 }], answer: 2 },
+		{ _id: 2, soundFile: 'audio/y.m4a', answers: [{ symbol: 'rôme', key: 1 }, { symbol: 'pâple', key: 2 }, { symbol: 'vaugne', key: 3 }, { symbol: 'muc', key: 4 }], answer: 4 },
+		{ _id: 3, soundFile: 'audio/y.m4a', answers: [{ symbol: 'pâvre', key: 1 }, { symbol: 'guque', key: 2 }, { symbol: 'rôre', key: 3 }, { symbol: 'jeau', key: 4 }], answer: 2 },
+		{ _id: 4, soundFile: 'audio/y.m4a', answers: [{ symbol: 'pâthe', key: 1 }, { symbol: 'zulle', key: 2 }, { symbol: 'mône', key: 3 }, { symbol: 'deau', key: 4 }], answer: 2 },
+		{ _id: 5, soundFile: 'audio/y.m4a', answers: [{ symbol: 'pâble', key: 1 }, { symbol: 'rôse', key: 2 }, { symbol: 'crûne', key: 3 }, { symbol: 'teau', key: 4 }], answer: 3 },
+		{ _id: 6, soundFile: 'audio/y.m4a', answers: [{ symbol: 'pâgre', key: 1 }, { symbol: 'môre', key: 2 }, { symbol: 'nuge', key: 3 }, { symbol: 'bou', key: 4 }], answer: 3 },
+		{ _id: 7, soundFile: 'audio/y.m4a', answers: [{ symbol: 'rille', key: 1 }, { symbol: 'pâcle', key: 2 }, { symbol: 'pume', key: 3 }, { symbol: 'pône', key: 4 }], answer: 3 },
+		{ _id: 8, soundFile: 'audio/y.m4a', answers: [{ symbol: 'flude', key: 1 }, { symbol: 'pâfle', key: 2 }, { symbol: 'pôse', key: 3 }, { symbol: 'tou', key: 4 }], answer: 1 },
+		{ _id: 9, soundFile: 'audio/y.m4a', answers: [{ symbol: 'shôre', key: 1 }, { symbol: 'nou', key: 2 }, { symbol: 'nur', key: 3 }, { symbol: 'corre', key: 4 }], answer: 3 },
+		{ _id: 10, soundFile: 'audio/y.m4a', answers: [{ symbol: 'frôre', key: 1 }, { symbol: 'brûse', key: 2 }, { symbol: 'rouisse', key: 3 }, { symbol: 'jouc', key: 4 }], answer: 2 },
+		{ _id: 11, soundFile: 'audio/y.m4a', answers: [{ symbol: 'zu', key: 1 }, { symbol: 'zê', key: 2 }, { symbol: 'zô', key: 3 }, { symbol: 'zô', key: 4 }], answer: 1 },
+		{ _id: 12, soundFile: 'audio/y.m4a', answers: [{ symbol: 'gu', key: 1 }, { symbol: 'gai', key: 2 }, { symbol: 'gê', key: 3 }, { symbol: 'gô', key: 4 }], answer: 1 },
+		{ _id: 13, soundFile: 'audio/y.m4a', answers: [{ symbol: 'mu', key: 1 }, { symbol: 'mi', key: 2 }, { symbol: 'moe', key: 3 }, { symbol: 'man', key: 4 }], answer: 1 },
+		{ _id: 14, soundFile: 'audio/i.m4a', answers: [{ symbol: 'gabe', key: 1 }, { symbol: 'ronze', key: 2 }, { symbol: 'pygle', key: 3 }, { symbol: 'ansre', key: 4 }], answer: 3 },
+		{ _id: 15, soundFile: 'audio/i.m4a', answers: [{ symbol: 'pifle', key: 1 }, { symbol: 'vament', key: 2 }, { symbol: 'blomb', key: 3 }, { symbol: 'nens', key: 4 }], answer: 1 },
+		{ _id: 16, soundFile: 'audio/i.m4a', answers: [{ symbol: 'cranc', key: 1 }, { symbol: 'mague', key: 2 }, { symbol: 'pydre', key: 3 }, { symbol: 'prompe', key: 4 }], answer: 3 },
+		{ _id: 17, soundFile: 'audio/i.m4a', answers: [{ symbol: 'mensal', key: 1 }, { symbol: 'quisse', key: 2 }, { symbol: 'âpe', key: 3 }, { symbol: 'vens', key: 4 }], answer: 2 },
+		{ _id: 18, soundFile: 'audio/i.m4a', answers: [{ symbol: 'psomb', key: 1 }, { symbol: 'pycre', key: 2 }, { symbol: 'kaffe', key: 3 }, { symbol: 'viment', key: 4 }], answer: 2 },
+		{ _id: 19, soundFile: 'audio/i.m4a', answers: [{ symbol: 'pâtre', key: 1 }, { symbol: 'nion', key: 2 }, { symbol: 'pyvre', key: 3 }, { symbol: 'cramp', key: 4 }], answer: 3 },
+		{ _id: 20, soundFile: 'audio/i.m4a', answers: [{ symbol: 'gement', key: 1 }, { symbol: 'donse', key: 2 }, { symbol: 'cie', key: 3 }, { symbol: 'chane', key: 4 }], answer: 3 },
+		{ _id: 21, soundFile: 'audio/i.m4a', answers: [{ symbol: 'trate', key: 1 }, { symbol: 'rippe', key: 2 }, { symbol: 'sendale', key: 3 }, { symbol: 'crand', key: 4 }], answer: 2 },
+		{ _id: 22, soundFile: 'audio/i.m4a', answers: [{ symbol: 'dong', key: 1 }, { symbol: 'ande', key: 2 }, { symbol: 'trate', key: 3 }, { symbol: 'figne', key: 4 }], answer: 4 },
+		{ _id: 23, soundFile: 'audio/i.m4a', answers: [{ symbol: 'baon', key: 1 }, { symbol: 'tiches', key: 2 }, { symbol: 'âvre', key: 3 }, { symbol: 'prante', key: 4 }], answer: 2 },
+		{ _id: 24, soundFile: 'audio/i.m4a', answers: [{ symbol: 'zi', key: 1 }, { symbol: 'zan', key: 2 }, { symbol: 'zê', key: 3 }, { symbol: 'zu', key: 4 }], answer: 1 },
+		{ _id: 25, soundFile: 'audio/i.m4a', answers: [{ symbol: 'vi', key: 1 }, { symbol: 'ven', key: 2 }, { symbol: 'vê', key: 3 }, { symbol: 'va', key: 4 }], answer: 1 },
+		{ _id: 26, soundFile: 'audio/i.m4a', answers: [{ symbol: 'mi', key: 1 }, { symbol: 'mo', key: 2 }, { symbol: 'mu', key: 3 }, { symbol: 'mou', key: 4 }], answer: 1 },
+		{ _id: 27, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'bère', key: 1 }, { symbol: 'jord', key: 2 }, { symbol: 'vauche', key: 3 }, { symbol: 'lou', key: 4 }], answer: 1 },
+		{ _id: 28, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'kote', key: 1 }, { symbol: 'rèle', key: 2 }, { symbol: 'saux', key: 3 }, { symbol: 'rou', key: 4 }], answer: 2 },
+		{ _id: 29, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'brole', key: 1 }, { symbol: 'chauge', key: 2 }, { symbol: 'sèle', key: 3 }, { symbol: 'vou', key: 4 }], answer: 3 },
+		{ _id: 30, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'trobe', key: 1 }, { symbol: 'tauge', key: 2 }, { symbol: 'joum', key: 3 }, { symbol: 'mêse', key: 4 }], answer: 4 },
+		{ _id: 31, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'zotte', key: 1 }, { symbol: 'sem', key: 2 }, { symbol: 'aupruche', key: 3 }, { symbol: 'joup', key: 4 }], answer: 2 },
+		{ _id: 32, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'potre', key: 1 }, { symbol: 'pateau', key: 2 }, { symbol: 'daive', key: 3 }, { symbol: 'joul', key: 4 }], answer: 3 },
+		{ _id: 33, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'chôte', key: 1 }, { symbol: 'dateau', key: 2 }, { symbol: 'mair', key: 3 }, { symbol: 'fot', key: 4 }], answer: 3 },
+		{ _id: 34, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'phêre', key: 1 }, { symbol: 'crôle', key: 2 }, { symbol: 'zeau', key: 3 }, { symbol: 'vot', key: 4 }], answer: 1 },
+		{ _id: 35, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'lort', key: 1 }, { symbol: 'zose', key: 2 }, { symbol: 'meige', key: 3 }, { symbol: 'toue', key: 4 }], answer: 3 },
+		{ _id: 36, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'torc', key: 1 }, { symbol: 'crère', key: 2 }, { symbol: 'zot', key: 3 }, { symbol: 'douf', key: 4 }], answer: 2 },
+		{ _id: 37, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'zou', key: 1 }, { symbol: 'zai', key: 2 }, { symbol: 'zon', key: 3 }, { symbol: 'zan', key: 4 }], answer: 2 },
+		{ _id: 38, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'gué', key: 1 }, { symbol: 'gé', key: 2 }, { symbol: 'gâ', key: 3 }, { symbol: 'gu', key: 4 }], answer: 2 },
+		{ _id: 39, soundFile: 'audio/ɛ.m4a', answers: [{ symbol: 'jé', key: 1 }, { symbol: 'joi', key: 2 }, { symbol: 'jau', key: 3 }, { symbol: 'jou', key: 4 }], answer: 1 },
+		{ _id: 40, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'seur', key: 1 }, { symbol: 'chouille', key: 2 }, { symbol: 'gnôre', key: 3 }, { symbol: 'rat', key: 4 }], answer: 1 },
+		{ _id: 41, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'terouil', key: 1 }, { symbol: 'feur', key: 2 }, { symbol: 'cocte', key: 3 }, { symbol: 'nat', key: 4 }], answer: 2 },
+		{ _id: 42, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'rouque', key: 1 }, { symbol: 'corle', key: 2 }, { symbol: 'feure', key: 3 }, { symbol: 'lat', key: 4 }], answer: 3 },
+		{ _id: 43, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'tijoux', key: 1 }, { symbol: 'colte', key: 2 }, { symbol: 'vat', key: 3 }, { symbol: 'boeur', key: 4 }], answer: 4 },
+		{ _id: 44, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'tisoux', key: 1 }, { symbol: 'feuisse', key: 2 }, { symbol: 'cofte', key: 3 }, { symbol: 'sat', key: 4 }], answer: 2 },
+		{ _id: 45, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'zou', key: 1 }, { symbol: 'rolte', key: 2 }, { symbol: 'jeuil', key: 3 }, { symbol: 'tat', key: 4 }], answer: 3 },
+		{ _id: 46, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'joux', key: 1 }, { symbol: 'rorne', key: 2 }, { symbol: 'teuil', key: 3 }, { symbol: 'dat', key: 4 }], answer: 3 },
+		{ _id: 47, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'oeur', key: 1 }, { symbol: 'coux', key: 2 }, { symbol: 'corme', key: 3 }, { symbol: 'râsse', key: 4 }], answer: 1 },
+		{ _id: 48, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'doul', key: 1 }, { symbol: 'boje', key: 2 }, { symbol: 'deurt', key: 3 }, { symbol: 'mâsse', key: 4 }], answer: 3 },
+		{ _id: 49, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'doup', key: 1 }, { symbol: 'oeud', key: 2 }, { symbol: 'boze', key: 3 }, { symbol: 'trat', key: 4 }], answer: 2 },
+		{ _id: 50, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'zeu', key: 1 }, { symbol: 'zi', key: 2 }, { symbol: 'zoe', key: 3 }, { symbol: 'zâ', key: 4 }], answer: 1 },
+		{ _id: 51, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'seu', key: 1 }, { symbol: 'su', key: 2 }, { symbol: 'so', key: 3 }, { symbol: 'sou', key: 4 }], answer: 1 },
+		{ _id: 52, soundFile: 'audio/œ.m4a', answers: [{ symbol: 'meu', key: 1 }, { symbol: 'men', key: 2 }, { symbol: 'man', key: 3 }, { symbol: 'mô', key: 4 }], answer: 1 },
+		{ _id: 53, soundFile: 'audio/u.m4a', answers: [{ symbol: 'cacte', key: 1 }, { symbol: 'ron', key: 2 }, { symbol: 'pouc', key: 3 }, { symbol: 'chaur', key: 4 }], answer: 3 },
+		{ _id: 54, soundFile: 'audio/u.m4a', answers: [{ symbol: 'sant', key: 1 }, { symbol: 'jon', key: 2 }, { symbol: 'lous', key: 3 }, { symbol: 'sal', key: 4 }], answer: 3 },
+		{ _id: 55, soundFile: 'audio/u.m4a', answers: [{ symbol: 'fant', key: 1 }, { symbol: 'sout', key: 2 }, { symbol: 'pac', key: 3 }, { symbol: 'corge', key: 4 }], answer: 2 },
+		{ _id: 56, soundFile: 'audio/u.m4a', answers: [{ symbol: 'son', key: 1 }, { symbol: 'rous', key: 2 }, { symbol: 'vac', key: 3 }, { symbol: 'chauf', key: 4 }], answer: 2 },
+		{ _id: 57, soundFile: 'audio/u.m4a', answers: [{ symbol: 'corve', key: 1 }, { symbol: 'sam', key: 2 }, { symbol: 'foux', key: 3 }, { symbol: 'pon', key: 4 }], answer: 3 },
+		{ _id: 58, soundFile: 'audio/a.m4a', answers: [{ symbol: 'bant', key: 1 }, { symbol: 'von', key: 2 }, { symbol: 'nac', key: 3 }, { symbol: 'chôtte', key: 4 }], answer: 3 },
+		{ _id: 59, soundFile: 'audio/a.m4a', answers: [{ symbol: 'mant', key: 1 }, { symbol: 'saz', key: 2 }, { symbol: 'ciste', key: 3 }, { symbol: 'rasse', key: 4 }], answer: 2 },
+		{ _id: 60, soundFile: 'audio/a.m4a', answers: [{ symbol: 'za', key: 1 }, { symbol: 'zou', key: 2 }, { symbol: 'zu', key: 3 }, { symbol: 'zoi', key: 4 }], answer: 1 },
+		{ _id: 61, soundFile: 'audio/a.m4a', answers: [{ symbol: 'ga', key: 1 }, { symbol: 'gai', key: 2 }, { symbol: 'gen', key: 3 }, { symbol: 'gou', key: 4 }], answer: 1 },
+		{ _id: 62, soundFile: 'audio/a.m4a', answers: [{ symbol: 'ja', key: 1 }, { symbol: 'jî', key: 2 }, { symbol: 'jau', key: 3 }, { symbol: 'jê', key: 4 }], answer: 1 },
 	]
 };

@@ -1,27 +1,14 @@
 'use strict';
-let wordElement;
+let wordElement, statusWrapper;
 
-function keyup(e){
-	switch (e.key) {
-		case '1':
-		case '2':
-		case '3':
-		case '4':
-			trackWord(parseInt(e.key));
-			break;
-		case ' ':
-			progressSlide();
-			break;
-		case 'p':
-			displayPause();
-			break;
-		case 'f':
-			displayFinish();
-			break;
-	}
+function playAudio() {
+	let audioElement = document.getElementById('audio');
+	audioElement.src = 'audio/a.m4a';
+	audioElement.play().catch(console.error);
 }
 
-function next(){
+function next(e){
+	e && e.preventDefault && e.preventDefault();
 	progressSlide();
 }
 
@@ -36,10 +23,9 @@ function answerClick(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	document.body.addEventListener('keyup', keyup);
-	document.getElementById('submitForm').addEventListener('click', submitForm);
 	document.getElementById('step-one').style.display = 'flex';
 	wordElement = document.getElementById('answers');
+	statusWrapper = document.getElementById('status-wrapper');
 	wordElement.addEventListener('click', answerClick);
 });
 
@@ -82,6 +68,7 @@ function shuffleArray(array) {
 function runNextWord() {
 	item = bank[itemIndex];
 	wordElement.innerHTML = '';
+	statusWrapper.setAttribute('data-status', '');
 
 	setTimeout(function(){
 		let result = {
@@ -96,47 +83,42 @@ function runNextWord() {
 		audioElement.src = item.soundFile;
 		audioElement.onplaying = () => {
 			result.audioStart = Date.now();
+			statusWrapper.setAttribute('data-status', 'playing');
 		};
 		audioElement.onended = () => {
 			result.audioEnd = Date.now();
-			wordElement.innerHTML = item.answers.map(answer => `<li data-key="${answer.key}">${answer.symbol}</li>`).join('');
+			wordElement.innerHTML = shuffleArray(item.answers).map(answer => `<li data-key="${answer.key}">${answer.symbol}</li>`).join('');
+			statusWrapper.setAttribute('data-status', 'answers');
 		};
 		audioElement.play().catch(console.error);
 	}, 500);
 }
 
 function trackWord(response) {
-	if (!item) return;
 	let result = results[results.length - 1];
 	result.responseTime = Date.now();
 	result.reaction = result.responseTime - result.audioEnd;
 	result.response = response;
 	result.accuracy = result.response === result.answer;
-
 	itemIndex++;
+	if (!item) return;
 	item = null;
 
 	if (!bank[itemIndex]) {
 		displayFinish();
-	} else if (itemIndex > 25 && itemIndex < bank.length - 25 && itemIndex % 25 === 1) {
-		displayPause();
 	} else {
 		if (isPractice && result.accuracy)
-			wordElement.innerHTML = '<img src="correct.png" />';
+			statusWrapper.setAttribute('data-status', 'correct');
 		else if (isPractice && !result.accuracy)
-			wordElement.innerHTML = '<img src="incorrect.png" />';
-		else
+			statusWrapper.setAttribute('data-status', 'incorrect');
+		else {
+			statusWrapper.setAttribute('data-status', '');
 			wordElement.innerHTML = '';
+		}
 		setTimeout(function(){
 			runNextWord();
 		}, 1500);
 	}
-}
-
-function displayPause() {
-	document.getElementById('word-container').style.display = 'none';
-	document.getElementById('step-pause').style.display = 'flex';
-	state = 'pause';
 }
 
 function displayFinish() {
@@ -146,8 +128,7 @@ function displayFinish() {
 		isPractice = false;
 		state = 'four';
 	} else {
-		document.getElementById('step-form').style.display = 'flex';
-		state = 'finish';
+		submitResults();
 	}
 }
 
@@ -180,21 +161,15 @@ function progressSlide() {
 			runExperiment();
 			state = 'experiment';
 			break;
-		case 'pause':
-			document.getElementById('step-pause').style.display = 'none';
-			document.getElementById('word-container').style.display = 'flex';
-			state = 'experiment';
-			document.getElementById('word').innerHTML = '';
-			setTimeout(function(){
-				runNextWord();
-			}, 1500);
-			break;
 	}
 }
 
 let submitAttempts = 0;
 function submitResults() {
 	document.getElementById('step-loading').style.display = 'flex';
+	state = 'submitting';
+	getFormData();
+	console.log('submitResults', { results, user });
 	firebase.database().ref('results').push().set({
 		results: results,
 		user: user
@@ -209,16 +184,7 @@ function submitResults() {
 	});
 }
 
-function submitForm() {
-	if (submitAttempts > 0) return; // just in case lag or something makes it come here again
-
-	let handedness = document.getElementById("handedness");
-	if (!document.getElementById('age').value
-		|| !document.getElementById('languages').value || document.getElementById('handedness').selectedIndex === 0) {
-		alert('Please fill in all the form fields.');
-		return;
-	}
-
+function getFormData() {
 	let questionnaire = document.getElementById('questionnaire');
 	const formData = new FormData(questionnaire);
 	for (const pair of formData.entries()) {
@@ -226,8 +192,4 @@ function submitForm() {
 	}
 
 	user.formSubmitTime = Date.now();
-
-	document.getElementById('submitForm').removeEventListener('click', submitForm);
-	document.getElementById('step-form').style.display = 'none';
-	progressSlide();
 }
