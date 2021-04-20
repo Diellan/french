@@ -44,6 +44,11 @@
       padding: 30px;
     }
 
+    .main {
+      max-height: 100%;
+      flex: 1;
+    }
+
     .step {
       display: none;
       flex-direction: column;
@@ -98,244 +103,246 @@
 </head>
 
 <body class="mdc-typography">
-  <div class="step" id="step-one">
-    <div class="mdc-typography--body1">
-      <p>Hello and welcome!</p>
-      <p>Thank you for participating!</p>
-      <p>In this experiment for people who studied French in high school, you will be asked to match letter-strings to
-        sounds.</p>
-      <p>First, you will hear a sound play in your headphones, then a multiple-choice answer set will appear. Please
-        click on the letter string that best matches the sound you've just heard as quickly and as accurately as
-        possible. Once you've clicked on the letter-string, you will proceed automatically to the next question.</p>
-      <p>You will have the opportunity to practice questions and answers before the experiment phase.</p>
-      <p>First, let's fill out a short background questionnaire!</p>
-      <p>All information in the questionnaire is confidential and will be used anonymously.</p>
-      <div class="mdc-touch-target-wrapper">
-        <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Next</span>
-          <span class="mdc-button__touch"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="step" id="step-form">
-    <div class="mdc-typography--body1">
-      <form id="questionnaire">
-        <div>
-          <label for="sex">What is your biological sex?</label>
-          <select name="sex" id="sex">
-            <option></option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label for="age">How old are you?</label>
-          <input type="number" name="age" id="age" />
-        </div>
-        <div>
-          <label for="education">What is your level of education?</label>
-          <select name="education" id="education">
-            <option></option>
-            <option>High school</option>
-            <option>Some College</option>
-            <option>Undergraduate Degree</option>
-            <option>Graduate Degree</option>
-          </select>
-        </div>
-        <div>
-          <label for="languages">What languages do you know besides English? Please list them and the age you acquired
-            them (to the best of your ability).</label>
-          <textarea id="languages" name="languages"></textarea>
-        </div>
-        <div>
-          <label for="french-age">What age did you begin studying French?</label>
-          <select name="french-age" id="french-age">
-            <option></option>
-            <option>Before elementary school</option>
-            <option>Elementary school</option>
-            <option>Middle School</option>
-            <option>High school</option>
-            <option>Other (explain)</option>
-          </select>
-          <input type="text" name="french-age-more" id="french-age-more" />
-        </div>
-        <div>
-          <label for="french-years">How many years of French did you take?</label>
-          <input type="number" name="french-years" id="french-years"></textarea>
-        </div>
-        <div>
-          <label for="french-exposure">Have you continued using/being exposed to French after high school?</label>
-          <select name="french-exposure" id="french-exposure">
-            <option></option>
-            <option>Yes (explain)</option>
-            <option>No</option>
-          </select>
-          <input type="text" name="french-exposure-more" id="french-exposure-more" />
-        </div>
-        <div>
-          <label for="french-usage-outside">During your high school studies, did you learn or use French voluntarily
-            outside school?</label>
-          <select name="french-usage-outside" id="french-usage-outside">
-            <option></option>
-            <option>Yes (explain)</option>
-            <option>No</option>
-          </select>
-          <input type="text" name="french-usage-outside-more" id="french-usage-outside-more" />
-        </div>
-        <div>
-          <label for="french-country">Did you spend any time in a French-speaking country?</label>
-          <select name="french-country" id="french-country">
-            <option></option>
-            <option>No</option>
-            <option>Less than 2 weeks</option>
-            <option>Less than 1 month</option>
-            <option>1-6 months</option>
-            <option>6 months - 1 year</option>
-            <option>More than year</option>
-          </select>
-        </div>
-        <div>
-          <label for="french-listening">Please indicate your French listening abilities in high school:</label>
-          <select name="french-listening" id="french-listening">
-            <option value="1">1 (Very low level)</option>
-            <option value="2">2 (low level)</option>
-            <option value="3">3 (moderate level)</option>
-            <option value="4">4 (high level)</option>
-            <option value="5">5 (Very high level)</option>
-          </select>
-        </div>
-        <div>
-          <label for="french-reading">Please indicate your French reading abilities in high school:</label>
-          <select name="french-reading" id="french-reading">
-            <option value="1">1 (Very low level)</option>
-            <option value="2">2 (low level)</option>
-            <option value="3">3 (moderate level)</option>
-            <option value="4">4 (high level)</option>
-            <option value="5">5 (Very high level)</option>
-          </select>
-        </div>
-        <div>
-          <label for="french-writing">Please indicate your French writing abilities in high school:</label>
-          <select name="french-writing" id="french-writing">
-            <option value="1">1 (Very low level)</option>
-            <option value="2">2 (low level)</option>
-            <option value="3">3 (moderate level)</option>
-            <option value="4">4 (high level)</option>
-            <option value="5">5 (Very high level)</option>
-          </select>
-        </div>
-        <div>
-          <label for="french-speaking">Please indicate your French speaking abilities in high school:</label>
-          <select name="french-speaking" id="french-speaking">
-            <option value="1">1 (Very low level)</option>
-            <option value="2">2 (low level)</option>
-            <option value="3">3 (moderate level)</option>
-            <option value="4">4 (high level)</option>
-            <option value="5">5 (Very high level)</option>
-          </select>
-        </div>
-        <div>
-          <label for="french-why">Why did you choose to study French?</label>
-          <textarea id="french-why" name="french-why"></textarea>
-        </div>
-        <div>
-          <label for="french-enjoyment">Did you enjoy learning French in high school?</label>
-          <select name="french-enjoyment" id="french-enjoyment">
-            <option></option>
-            <option>No</option>
-            <option>Somewhat</option>
-            <option>Moderately</option>
-            <option>Greatly</option>
-          </select>
-        </div>
-        <div>
-          <label for="french-connected">Do you feel connected to French culture?</label>
-          <select name="french-connected" id="french-connected">
-            <option></option>
-            <option>No</option>
-            <option>Somewhat</option>
-            <option>Moderately</option>
-            <option>Greatly</option>
-          </select>
-        </div>
+  <div class="main">
+    <div class="step" id="step-one">
+      <div class="mdc-typography--body1">
+        <p>Hello and welcome!</p>
+        <p>Thank you for participating!</p>
+        <p>In this experiment for people who studied French in high school, you will be asked to match letter-strings to
+          sounds.</p>
+        <p>First, you will hear a sound play in your headphones, then a multiple-choice answer set will appear. Please
+          click on the letter string that best matches the sound you've just heard as quickly and as accurately as
+          possible. Once you've clicked on the letter-string, you will proceed automatically to the next question.</p>
+        <p>You will have the opportunity to practice questions and answers before the experiment phase.</p>
+        <p>First, let's fill out a short background questionnaire!</p>
+        <p>All information in the questionnaire is confidential and will be used anonymously.</p>
         <div class="mdc-touch-target-wrapper">
-          <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()" type="button">
+          <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
             <span class="mdc-button__ripple"></span>
             <span class="mdc-button__label">Next</span>
             <span class="mdc-button__touch"></span>
           </button>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="step" id="step-two">
-    <div class="mdc-typography--body1">
-      <p>First, let's do a quick sound test!</p>
-      <p>Click Play to test your audio. If you hear a sound, please click Next to continue. If not, adjust your audio
-        and click Play to try again.</p>
-      <div class="mdc-touch-target-wrapper">
-        <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="playAudio()">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Play</span>
-          <span class="mdc-button__touch"></span>
-        </button>
-      </div>
-      <div class="mdc-touch-target-wrapper">
-        <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Next</span>
-          <span class="mdc-button__touch"></span>
-        </button>
       </div>
     </div>
-  </div>
-  <div class="step" id="step-three">
-    <div class="mdc-typography--body1">
-      <p>Thank you!</p>
-      <p>You will now see several practice questions, just to make sure you know how it all works!</p>
-      <div class="mdc-touch-target-wrapper">
-        <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Start practice</span>
-          <span class="mdc-button__touch"></span>
-        </button>
+    <div class="step" id="step-form">
+      <div class="mdc-typography--body1">
+        <form id="questionnaire">
+          <div>
+            <label for="sex">What is your biological sex?</label>
+            <select name="sex" id="sex">
+              <option></option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="age">How old are you?</label>
+            <input type="number" name="age" id="age" />
+          </div>
+          <div>
+            <label for="education">What is your level of education?</label>
+            <select name="education" id="education">
+              <option></option>
+              <option>High school</option>
+              <option>Some College</option>
+              <option>Undergraduate Degree</option>
+              <option>Graduate Degree</option>
+            </select>
+          </div>
+          <div>
+            <label for="languages">What languages do you know besides English? Please list them and the age you acquired
+              them (to the best of your ability).</label>
+            <textarea id="languages" name="languages"></textarea>
+          </div>
+          <div>
+            <label for="french-age">What age did you begin studying French?</label>
+            <select name="french-age" id="french-age">
+              <option></option>
+              <option>Before elementary school</option>
+              <option>Elementary school</option>
+              <option>Middle School</option>
+              <option>High school</option>
+              <option>Other (explain)</option>
+            </select>
+            <input type="text" name="french-age-more" id="french-age-more" />
+          </div>
+          <div>
+            <label for="french-years">How many years of French did you take?</label>
+            <input type="number" name="french-years" id="french-years"></textarea>
+          </div>
+          <div>
+            <label for="french-exposure">Have you continued using/being exposed to French after high school?</label>
+            <select name="french-exposure" id="french-exposure">
+              <option></option>
+              <option>Yes (explain)</option>
+              <option>No</option>
+            </select>
+            <input type="text" name="french-exposure-more" id="french-exposure-more" />
+          </div>
+          <div>
+            <label for="french-usage-outside">During your high school studies, did you learn or use French voluntarily
+              outside school?</label>
+            <select name="french-usage-outside" id="french-usage-outside">
+              <option></option>
+              <option>Yes (explain)</option>
+              <option>No</option>
+            </select>
+            <input type="text" name="french-usage-outside-more" id="french-usage-outside-more" />
+          </div>
+          <div>
+            <label for="french-country">Did you spend any time in a French-speaking country?</label>
+            <select name="french-country" id="french-country">
+              <option></option>
+              <option>No</option>
+              <option>Less than 2 weeks</option>
+              <option>Less than 1 month</option>
+              <option>1-6 months</option>
+              <option>6 months - 1 year</option>
+              <option>More than year</option>
+            </select>
+          </div>
+          <div>
+            <label for="french-listening">Please indicate your French listening abilities in high school:</label>
+            <select name="french-listening" id="french-listening">
+              <option value="1">1 (Very low level)</option>
+              <option value="2">2 (low level)</option>
+              <option value="3">3 (moderate level)</option>
+              <option value="4">4 (high level)</option>
+              <option value="5">5 (Very high level)</option>
+            </select>
+          </div>
+          <div>
+            <label for="french-reading">Please indicate your French reading abilities in high school:</label>
+            <select name="french-reading" id="french-reading">
+              <option value="1">1 (Very low level)</option>
+              <option value="2">2 (low level)</option>
+              <option value="3">3 (moderate level)</option>
+              <option value="4">4 (high level)</option>
+              <option value="5">5 (Very high level)</option>
+            </select>
+          </div>
+          <div>
+            <label for="french-writing">Please indicate your French writing abilities in high school:</label>
+            <select name="french-writing" id="french-writing">
+              <option value="1">1 (Very low level)</option>
+              <option value="2">2 (low level)</option>
+              <option value="3">3 (moderate level)</option>
+              <option value="4">4 (high level)</option>
+              <option value="5">5 (Very high level)</option>
+            </select>
+          </div>
+          <div>
+            <label for="french-speaking">Please indicate your French speaking abilities in high school:</label>
+            <select name="french-speaking" id="french-speaking">
+              <option value="1">1 (Very low level)</option>
+              <option value="2">2 (low level)</option>
+              <option value="3">3 (moderate level)</option>
+              <option value="4">4 (high level)</option>
+              <option value="5">5 (Very high level)</option>
+            </select>
+          </div>
+          <div>
+            <label for="french-why">Why did you choose to study French?</label>
+            <textarea id="french-why" name="french-why"></textarea>
+          </div>
+          <div>
+            <label for="french-enjoyment">Did you enjoy learning French in high school?</label>
+            <select name="french-enjoyment" id="french-enjoyment">
+              <option></option>
+              <option>No</option>
+              <option>Somewhat</option>
+              <option>Moderately</option>
+              <option>Greatly</option>
+            </select>
+          </div>
+          <div>
+            <label for="french-connected">Do you feel connected to French culture?</label>
+            <select name="french-connected" id="french-connected">
+              <option></option>
+              <option>No</option>
+              <option>Somewhat</option>
+              <option>Moderately</option>
+              <option>Greatly</option>
+            </select>
+          </div>
+          <div class="mdc-touch-target-wrapper">
+            <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()" type="button">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">Next</span>
+              <span class="mdc-button__touch"></span>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
-  <div class="step" id="word-container">
-    <div class="mdc-typography--body1" id="status-wrapper" data-status="">
-      <audio id="audio"></audio>
-      <img src="speaker.png" data-status="playing" />
-      <img src="correct.png" data-status="correct" />
-      <img src="incorrect.png" data-status="incorrect" />
-      <ol id="answers" data-status="answers"></ol>
-    </div>
-  </div>
-  <div class="step" id="step-four">
-    <div class="mdc-typography--body1">
-      <p>This is the end of your practise session. From here on out you will receive no more feedback on your answers.
-      </p>
-      <div class="mdc-touch-target-wrapper">
-        <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Begin the experiment</span>
-          <span class="mdc-button__touch"></span>
-        </button>
+    <div class="step" id="step-two">
+      <div class="mdc-typography--body1">
+        <p>First, let's do a quick sound test!</p>
+        <p>Click Play to test your audio. If you hear a sound, please click Next to continue. If not, adjust your audio
+          and click Play to try again.</p>
+        <div class="mdc-touch-target-wrapper">
+          <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="playAudio()">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Play</span>
+            <span class="mdc-button__touch"></span>
+          </button>
+        </div>
+        <div class="mdc-touch-target-wrapper">
+          <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Next</span>
+            <span class="mdc-button__touch"></span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="step" id="step-finish">
-    <div class="mdc-typography--body1">
-      <p>You're all done!</p>
-      <p>Thank you for participating!</p>
+    <div class="step" id="step-three">
+      <div class="mdc-typography--body1">
+        <p>Thank you!</p>
+        <p>You will now see several practice questions, just to make sure you know how it all works!</p>
+        <div class="mdc-touch-target-wrapper">
+          <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Start practice</span>
+            <span class="mdc-button__touch"></span>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="step" id="step-loading">
-    <div class="mdc-typography--body1">
-      <p>Submitting...</p>
+    <div class="step" id="word-container">
+      <div class="mdc-typography--body1" id="status-wrapper" data-status="">
+        <audio id="audio"></audio>
+        <img src="speaker.png" data-status="playing" />
+        <img src="correct.png" data-status="correct" />
+        <img src="incorrect.png" data-status="incorrect" />
+        <ol id="answers" data-status="answers"></ol>
+      </div>
+    </div>
+    <div class="step" id="step-four">
+      <div class="mdc-typography--body1">
+        <p>This is the end of your practise session. From here on out you will receive no more feedback on your answers.
+        </p>
+        <div class="mdc-touch-target-wrapper">
+          <button class="mdc-button mdc-button--touch mdc-button--raised" onclick="next()">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Begin the experiment</span>
+            <span class="mdc-button__touch"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="step" id="step-finish">
+      <div class="mdc-typography--body1">
+        <p>You're all done!</p>
+        <p>Thank you for participating!</p>
+      </div>
+    </div>
+    <div class="step" id="step-loading">
+      <div class="mdc-typography--body1">
+        <p>Submitting...</p>
+      </div>
     </div>
   </div>
   <script>
